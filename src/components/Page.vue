@@ -3,8 +3,9 @@
     <span class="contact">Contact</span>
     <target-link class="link twitter" v-bind:text="texts.twitter" v-bind:href="hrefs.twitter"></target-link>
     <target-link class="link dribbble" v-bind:text="texts.dribbble" v-bind:href="hrefs.dribbble"></target-link>
-    <target-link class="link codepen" v-bind:text="texts.codepen" v-bind:href="hrefs.codepen"></target-link>
+    <target-link v-if="false" class="link codepen" v-bind:text="texts.codepen" v-bind:href="hrefs.codepen"></target-link>
     <target-link class="link weibo" v-bind:text="texts.weibo" v-bind:href="hrefs.weibo"></target-link>
+    <target-link class="link blog" v-bind:text="texts.blog" v-bind:href="hrefs.blog"></target-link>
   </div>
 </template>
 
@@ -15,14 +16,16 @@ const texts = {
   twitter: "twitter",
   dribbble: "dribbble",
   codepen: "codepen",
-  weibo: "weibo"
+  weibo: "weibo",
+  blog: "blog"
 };
 
 const hrefs = {
   twitter: "https://twitter.com/JHWviuDZH8bcvuM",
   dribbble: "https://dribbble.com/De_Coder",
   codepen: "https://codepen.io/De-Coder/",
-  weibo: "https://weibo.com/3229623314"
+  weibo: "https://weibo.com/3229623314",
+  blog: "https://officialyoungx.github.io"
 };
 
 export default {
@@ -56,6 +59,23 @@ $red: #f42a2f;
   justify-items: center;
   align-items: center;
 }
+
+.contact {
+  border: 0.2rem solid $white;
+  border-radius: 0rem 0rem 1rem 1rem;
+  padding: 1rem 2rem;
+  box-shadow: 0 0 1.4vw $white, inset 0 0 1.4vw $white;
+
+  color: $white;
+  font-size: 2rem;
+  text-shadow: 0 0 1vw $white;
+
+  grid-row: 1/2;
+  grid-column: 1/5;
+  align-self: start;
+  transform: translateY(-0.4rem);
+}
+
 .link {
   font-family: "neon";
   font-weight: 800;
@@ -76,19 +96,9 @@ $red: #f42a2f;
   color: $red;
   text-shadow: 0 0 3vw $red;
 }
-.contact {
-  border: 0.2rem solid $white;
-  border-radius: 0rem 0rem 1rem 1rem;
-  padding: 1rem 2rem;
-  box-shadow: 0 0 3vw $white;
 
+.blog {
   color: $white;
-  font-size: 2rem;
-  text-shadow: 0 0 1vw $white;
-
-  grid-row: 1/2;
-  grid-column: 1/5;
-  align-self: start;
-  transform: translateY(-0.4rem);
+  text-shadow: 0 0 3vw $white;
 }
 </style>

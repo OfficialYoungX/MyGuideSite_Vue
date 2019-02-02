@@ -9,7 +9,7 @@
         <span class="yo__orange">to my</span>
         <span class="yo__puple">site</span>
       </p>
-      <div class="arrow-left"></div>
+      <div class="arrow-right"></div>
       <p>
         <span class="yo__deep-orange">decode</span>
       </p>
@@ -17,10 +17,11 @@
   </div>
 </template>
 
+
 <style lang="scss" scoped>
 @import '../scss/animation.scss';
 
-$standard-time: 4s;
+$standard-time: 2s;
 $animation: $standard-time ease infinite alternate;
 
 span{
@@ -47,7 +48,7 @@ $avatar-size: 10rem;
     display: flex;
     justify-content: center;
     align-items: center;
-    box-shadow: 0 0 3vw $deep-orange;
+    box-shadow: 0 0 1.4vw $deep-orange, inset 0 0 1.4vw $deep-orange;
     
 }
 .avatar{
@@ -68,6 +69,7 @@ $avatar-size: 10rem;
     font-weight: 800;
     font-size: 3rem;
     margin: 0 1rem;
+    transform: translateZ(0); // gpu
 }
 
 .yo__qing{
@@ -95,11 +97,19 @@ $avatar-size: 10rem;
     @include neon-deep-orange($deep-orange, $deep-orange-neibor, $deep-orange-neibor-darken);
 }
 
-.arrow-left{
+.arrow-right{
     width: 36rem;
-    height: 3rem;
-    background-image: url(../assets/arrow-right.png);
+    height: 4rem;
+    background-image: url(../assets/arrow-right.svg);
     background-position: center;
     background-size: cover;
+    animation: move 2s ease-in-out 0s infinite alternate;
+    transform: translateZ(0); // gpu 
 }
+
+@keyframes move {
+    to{
+        transform: translateX(3rem);
+    }
+} 
 </style>

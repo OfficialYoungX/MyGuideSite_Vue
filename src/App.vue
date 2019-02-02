@@ -22,18 +22,23 @@ export default {
 *,*::before,*::after {
   margin: 0;
   padding: 0;
-  // overflow-y: hidden;
 }
 html,body{
   overflow: hidden;
+  width: 100%;
+  height: 100%;
 }
 #app {
+  width: 100%;
+  height: 100%;
   font-family: 'neon', 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color: #2c3e50;
+  scroll-behavior: smooth;
   overflow-x: scroll;
   display: flex;
+  
 }
 
 @font-face {
